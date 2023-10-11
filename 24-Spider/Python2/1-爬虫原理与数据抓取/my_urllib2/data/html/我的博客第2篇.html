@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 小图标 -->
+    <link rel="shortcut icon" href="http://iconfont.alicdn.com/t/1488166591888.jpg@100h_100w.jpg" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">   
+    <title>时光笔记</title>
+
+    
+    
+
+    <style>
+        /* 调整页码11行位置自动居中 */
+        #center{
+            /* color: red */
+            text-align: center;
+            width: 600px;
+            height: 20px;
+            margin-top: 100px;
+            margin-left: 75px;
+            /* display: block; */
+            /* margin: 100px auto; */
+            font-size: 16px;
+            /* background: #78BFBF; */
+        }
+        /* 文本框禁止调整 */
+        #col-md-axb{
+            resize: none;
+            vertical-align: top;
+        }
+        span.highlighted{
+            color: red;
+        }
+    </style>
+
+    <!-- meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- css -->
+    <!-- <link rel="stylesheet" href="/static/blog/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="/static/blog/css/pace.css">
+    <link rel="stylesheet" href="/static/blog/css/custom.css">
+    <!-- 代码高亮 -->
+    <!--7 <link rel="stylesheet" href="/static/blog/css/highlights/autumn.css"> -->
+    <!--6 <link rel="stylesheet" href="/static/blog/css/highlights/borland.css"> -->
+    <!--5 <link rel="stylesheet" href="/static/blog/css/highlights/colorful.css"> -->
+    <!--2 <link rel="stylesheet" href="/static/blog/css/highlights/bw.css"> -->
+    <!--6 <link rel="stylesheet" href="/static/blog/css/highlights/default.css"> -->
+    <!--7 <link rel="stylesheet" href="/static/blog/css/highlights/emacs.css"> -->
+    <!--5+ <link rel="stylesheet" href="/static/blog/css/highlights/friendly.css"> -->
+    <!--5 <link rel="stylesheet" href="/static/blog/css/highlights/github.css"> -->
+    <!--6 <link rel="stylesheet" href="/static/blog/css/highlights/manni.css"> -->
+    <!--0 <link rel="stylesheet" href="/static/blog/css/highlights/monokai.css"> -->
+    <!--4+ <link rel="stylesheet" href="/static/blog/css/highlights/murphy.css"> -->
+    <!--1 <link rel="stylesheet" href="/static/blog/css/highlights/native.css"> -->
+    <!--1 <link rel="stylesheet" href="/static/blog/css/highlights/fruity.css"> -->
+    <!--6 <link rel="stylesheet" href="/static/blog/css/highlights/perldoc.css"> -->
+    <!--7- <link rel="stylesheet" href="/static/blog/css/highlights/tango.css"> -->
+    <!--6 <link rel="stylesheet" href="/static/blog/css/highlights/trac.css"> -->
+    <!--2+ <link rel="stylesheet" href="/static/blog/css/highlights/vim.css"> -->
+    <!--5+ <link rel="stylesheet" href="/static/blog/css/highlights/vs.css"> -->
+    <!--7 <link rel="stylesheet" href="/static/blog/css/highlights/pastie.css"> -->
+    <link rel="stylesheet" href="/static/blog/css/highlights/zenburn.css">
+
+    <!-- js -->
+    <!-- <script src="/static/blog/js/jquery-2.1.3.min.js"></script> -->
+    <!-- <script src="/static/blog/js/bootstrap.min.js"></script> -->
+    <script src="https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/static/blog/js/pace.min.js"></script>
+    <script src="/static/blog/js/modernizr.custom.js"></script>
+</head>
+
+<body>
+<div class="container">
+    <header id="site-header">
+        <div class="row">
+            <div class="col-md-4 col-sm-5 col-xs-8">
+                <div class="logo">
+                    <h1><a href="/">时光笔记</a></h1>
+                </div>
+            </div>
+            <div class="col-md-8 col-sm-7 col-xs-4">
+                <nav class="main-nav" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" id="trigger-overlay" class="navbar-toggle">
+                            <span class="ion-navicon"></span>
+                        </button>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="cl-effect-11"><a href="/" data-hover="首页">首页</a></li>
+                            <li class="cl-effect-11"><a href="#" data-hover="博客">博客</a></li>
+                            <li class="cl-effect-11"><a href="#" data-hover="关于">关于</a></li>
+                            <li class="cl-effect-11"><a href="#" data-hover="联系">联系</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </nav>
+                <div id="header-search-box">
+                    <a id="search-menu" href="#"><span id="search-icon" class="ion-ios-search-strong"></span></a>
+                    <div id="search-form" class="search-form">
+                        <form role="search" method="get" id="searchform" action="/search/">
+                            <input type="search" name="q" placeholder="搜索" required>
+                            <button type="submit"><span class="ion-ios-search-strong"></span></button>
+                        </form>
+                    </div>
+                </div>
+            </div><!-- col-md-8 -->
+        </div>
+    </header>
+</div>
+
+<div class="content-body">
+    <div class="container">
+        <div class="row">
+            <main class="col-md-8">
+                
+    <article class="post post-2">
+        <header class="entry-header">
+            <h1 class="entry-title">守护进程</h1>
+            <div class="entry-meta">
+                <span class="post-category"><a href="#">watchdog</a></span>
+                <span class="post-date"><a href="#"><time class="entry-date"
+                                                          datetime="2017年11月9日 20:32">2017年11月9日 20:32</time></a></span>
+                <span class="post-author"><a href="#">YJ</a></span>
+                <span class="comments-link"><a href="/post/2/#comment">0 评论</a></span>
+                <span class="views-count"><a href="#">23 阅读</a></span>
+            </div>
+        </header>
+        <div class="entry-content clearfix">
+            <p>设置watchdog守护程序，每隔5s查看一下它启动的进程，如果挂掉了就再拉起来——watchdog代码(shell)：</p>
+<div class="codehilite"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1"># watchdog.sh</span>
+
+<span class="c1"># 定义映射表 k=进程号 v=作业</span>
+<span class="nb">declare</span> -A mapper
+<span class="c1"># 存储进程号的文件（存储在运行watchdog的文件夹）</span>
+<span class="nv">conf</span><span class="o">=</span>dog.pid
+
+<span class="k">function</span> debug
+<span class="o">{</span>
+    <span class="nb">echo</span> <span class="nv">$@</span>
+<span class="o">}</span>
+
+<span class="c1"># param pid 进程号 </span>
+<span class="c1"># 使用ps命令查询该进程是否存在，如果不存在返回&quot;gone&quot;，否则返回&quot;stay&quot;</span>
+
+<span class="k">function</span> watch
+<span class="o">{</span>
+    <span class="nb">local</span> <span class="nv">pid</span><span class="o">=</span><span class="nv">$1</span>
+    <span class="nb">local</span> <span class="nv">index</span><span class="o">=</span><span class="sb">`</span>ps -ef<span class="p">|</span>awk <span class="s1">&#39;{print $2}&#39;</span><span class="p">|</span>grep -P <span class="s2">&quot;^</span><span class="si">${</span><span class="nv">pid</span><span class="si">}</span>$<span class="s2">&quot;</span><span class="sb">`</span>
+    <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="si">${</span><span class="nv">index</span><span class="si">}</span><span class="s2">None&quot;</span> <span class="o">=</span> <span class="s2">&quot;None&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+        <span class="nb">echo</span> gone
+        <span class="k">return</span>
+    <span class="k">fi</span>
+    <span class="nb">echo</span> stay
+<span class="o">}</span>
+
+<span class="c1"># 每过5秒钟检查一遍所有的进程，调用上面的watch函数</span>
+<span class="k">function</span> dogit
+<span class="o">{</span>
+    <span class="k">while</span> <span class="o">[</span> <span class="m">1</span> <span class="o">]</span>
+    <span class="k">do</span>
+        sleep <span class="m">5</span>
+        <span class="k">for</span> pid in <span class="si">${</span><span class="p">!mapper[@]</span><span class="si">}</span>
+        <span class="k">do</span>
+            debug pid:<span class="nv">$pid</span>
+            <span class="nb">local</span> <span class="nv">t</span><span class="o">=</span><span class="sb">`</span>watch <span class="nv">$pid</span><span class="sb">`</span>
+            debug <span class="s2">&quot;test result is </span><span class="nv">$t</span><span class="s2">!!!&quot;</span>
+            <span class="k">if</span> <span class="o">[</span> <span class="s2">&quot;</span><span class="nv">$t</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;gone&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+                debug <span class="s2">&quot;</span><span class="nv">$c</span><span class="s2"> with pid </span><span class="nv">$pid</span><span class="s2"> was gone&quot;</span>
+                loadscript <span class="si">${</span><span class="nv">mapper</span><span class="p">[</span><span class="nv">$pid</span><span class="p">]</span><span class="si">}</span>
+                <span class="nb">unset</span> mapper<span class="o">[</span><span class="nv">$pid</span><span class="o">]</span>
+                sed -i <span class="s2">&quot;/</span><span class="nv">$pid</span><span class="s2">/d&quot;</span> <span class="nv">$conf</span>
+            <span class="k">fi</span>
+        <span class="k">done</span>
+    <span class="k">done</span>
+<span class="o">}</span>
+
+<span class="c1"># 从作业文件加载需要守护的作业命令</span>
+<span class="k">function</span> loadscript
+<span class="o">{</span>
+    <span class="nb">local</span> <span class="nv">script</span><span class="o">=</span><span class="nv">$@</span>
+    debug <span class="nv">script</span><span class="o">=</span><span class="nv">$script</span>
+    <span class="nv">$script</span> &gt; /dev/null <span class="p">&amp;</span>
+    <span class="nb">local</span> <span class="nv">pid</span><span class="o">=</span><span class="nv">$!</span>
+    mapper<span class="o">[</span><span class="nv">$pid</span><span class="o">]=</span><span class="nv">$script</span>
+    <span class="nb">echo</span> <span class="nv">$pid</span> &gt;&gt; <span class="nv">$conf</span>
+<span class="o">}</span>
+
+<span class="k">function</span> clean
+<span class="o">{</span>
+    <span class="k">if</span> <span class="o">[</span> -f <span class="nv">$conf</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+        <span class="k">while</span> <span class="nb">read</span> line<span class="p">;</span> <span class="k">do</span>
+            <span class="k">if</span> <span class="o">[</span> -n <span class="s2">&quot;</span><span class="nv">$line</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+                <span class="nv">pid</span><span class="o">=</span><span class="sb">`</span>ps -ef<span class="p">|</span>awk <span class="s1">&#39;{print $2}&#39;</span><span class="p">|</span>grep <span class="nv">$line</span><span class="p">|</span>grep -v <span class="s1">&#39;grep&#39;</span><span class="sb">`</span>
+                <span class="k">if</span> <span class="o">[</span> -n <span class="s2">&quot;</span><span class="si">${</span><span class="nv">pid</span><span class="si">}</span><span class="s2">&quot;</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+                    debug killing <span class="nv">$pid</span>
+                    <span class="nb">kill</span> <span class="nv">$pid</span>
+                <span class="k">fi</span>
+            <span class="k">fi</span>
+        <span class="k">done</span> &lt; <span class="nv">$conf</span>
+    <span class="k">fi</span>
+    <span class="nb">echo</span> &gt; <span class="nv">$conf</span>
+    debug <span class="k">done</span>!
+<span class="o">}</span>
+
+<span class="k">function</span> main
+<span class="o">{</span>
+    clean
+    <span class="nb">local</span> <span class="nv">file</span><span class="o">=</span><span class="nv">$1</span>
+    <span class="k">if</span> <span class="o">[</span> -f <span class="nv">$file</span> <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+        <span class="k">while</span> <span class="nb">read</span> line
+        <span class="k">do</span>
+            loadscript <span class="nv">$line</span>
+        <span class="k">done</span> &lt; <span class="nv">$file</span>
+        dogit
+    <span class="k">else</span>
+        <span class="nb">echo</span> <span class="s2">&quot;Not a file!&quot;</span>
+    <span class="k">fi</span>
+<span class="o">}</span>
+
+main <span class="nv">$1</span><span class="p">;</span>
+</pre></div>    <!-- safe标签（过滤器Filter）：告诉Django该段文本安全 -->
+            <br>
+            <div class="widget-tag-cloud">
+                <ul>
+                    标签：
+                    
+                        <li><a href="/tag/16/">守护进程</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </article>
+    <section class="comment-area">
+        <hr>
+        <h3>发表评论</h3>
+        <form action="/comment/post/2/" method="post" class="comment-form">
+            <input type='hidden' name='csrfmiddlewaretoken' value='NdjEa3xL25LwNRbS0VHWTxbTVwxoHp0Pi0zu3xXEWes1LQLtuMdZ9uYYy17OWjY2' />
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="id_name">名字:</label>
+                    <input id="id_name" maxlength="100" name="name" type="text" required />
+                    
+                </div>
+                <div class="col-md-4">
+                    <label for="id_email">邮箱:</label>
+                    <input id="id_email" maxlength="255" name="email" type="email" required />
+                    
+                </div>
+                <div class="col-md-4">
+                    <label for="id_url">网址:</label>
+                    <input id="id_url" maxlength="200" name="url" type="url" />
+                    
+                </div>
+                <div class="col-md-12" id="col-md-axb">
+                    <label for="id_text">评论:</label>
+                    <textarea cols="40" id="id_text" name="text" rows="10" required>
+</textarea>
+                    
+                    <button type="submit" class="comment-btn">发表</button>
+                </div>
+            </div>    <!-- row -->
+        </form>
+
+        <div class="comment-list-panel">
+            <h3>评论列表，共 <span>0</span> 条评论</h3>
+            <ul class="comment-list list-unstyled">
+                
+                暂无评论
+                
+            </ul>
+        </div>
+    </section>
+
+
+            </main>
+            <aside class="col-md-4">
+                    
+    <div class="widget widget-content">
+        <h3 class="widget-title">目录</h3>
+        <div class="toc">
+<ul></ul>
+</div>
+
+    </div>
+
+                <div class="widget widget-recent-posts">
+                    <h3 class="widget-title">最新</h3>
+                                        
+                    <ul>
+                        
+                        <li>
+                            <a href="/post/9/">Flask request参数的获取</a>                                
+                        </li>
+                        
+                        <li>
+                            <a href="/post/7/">Django使用MySQL数据库的问题</a>                                
+                        </li>
+                        
+                        <li>
+                            <a href="/post/6/">Python一行命令</a>                                
+                        </li>
+                        
+                        <li>
+                            <a href="/post/5/">【转载】王垠——如何掌握所有的程序语言</a>                                
+                        </li>
+                        
+                        <li>
+                            <a href="/post/4/">git的使用</a>                                
+                        </li>
+                        
+                        <li>
+                            <a href="/post/2/">守护进程</a>                                
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div class="widget widget-archives">
+                    <h3 class="widget-title">归档</h3>
+                    
+                    <ul>
+                                                    
+                        <li>
+                            <a href="/archives/2017/12/">
+                                2017 年 12 月
+                            </a>
+                        </li>
+                                                    
+                        <li>
+                            <a href="/archives/2017/11/">
+                                2017 年 11 月
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+
+                <div class="widget widget-category">
+                    <h3 class="widget-title">分类</h3>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="/category/2/">Linux
+                                <span class="post-count"> --[1]</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="/category/3/">watchdog
+                                <span class="post-count"> --[1]</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="/category/4/">Git
+                                <span class="post-count"> --[1]</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="/category/5/">Server
+                                <span class="post-count"> --[1]</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="/category/7/">Python
+                                <span class="post-count"> --[1]</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="/category/10/">数据库
+                                <span class="post-count"> --[1]</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="/category/13/">转载
+                                <span class="post-count"> --[1]</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="/category/14/">Flask
+                                <span class="post-count"> --[1]</span>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+
+                <div class="widget widget-tag-cloud">
+                    <h3 class="widget-title">标签云</h3>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="/tag/1/">Python之美</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tag/3/">Python</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tag/4/">语言</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tag/6/">Linux</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tag/7/">git</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tag/12/">nginx</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tag/13/">踩过的坑</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tag/14/">数据库</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tag/16/">守护进程</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tag/17/">Django</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tag/18/">request参数</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+
+                <div class="rss">
+                    <a href="/all/rss/"><span class="ion-social-rss-outline"></span> RSS 订阅</a>
+                </div>
+            </aside>
+        </div>
+    </div>
+</div>
+
+<footer id="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+				<p class="copyright">鲁ICP备17049445号<br>
+				   &copy 2017 - CSS采集自<a href="http://www.cssmoban.com/"
+                                                        target="_blank" title="模板之家">模板之家</a>
+                    - 由<a href="http://yj1516.site/" title="网页模板" target="_blank">时光笔记</a>修改
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Mobile Menu -->
+<div class="overlay overlay-hugeinc">
+    <button type="button" class="overlay-close"><span class="ion-ios-close-empty"></span></button>
+    <nav>
+        <ul>
+            <li><a href="/">首页</a></li>
+            <li><a href="full-width.html">博客</a></li>
+            <li><a href="about.html">关于</a></li>
+            <li><a href="contact.html">联系</a></li>
+        </ul>
+    </nav>
+</div>
+
+<script src="/static/blog/js/script.js"></script>
+
+</body>
+</html>

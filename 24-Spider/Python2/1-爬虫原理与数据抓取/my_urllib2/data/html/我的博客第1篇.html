@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 小图标 -->
+    <link rel="shortcut icon" href="http://iconfont.alicdn.com/t/1488166591888.jpg@100h_100w.jpg" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">   
+    <title>时光笔记</title>
+
+    
+    
+
+    <style>
+        /* 调整页码11行位置自动居中 */
+        #center{
+            /* color: red */
+            text-align: center;
+            width: 600px;
+            height: 20px;
+            margin-top: 100px;
+            margin-left: 75px;
+            /* display: block; */
+            /* margin: 100px auto; */
+            font-size: 16px;
+            /* background: #78BFBF; */
+        }
+        /* 文本框禁止调整 */
+        #col-md-axb{
+            resize: none;
+            vertical-align: top;
+        }
+        span.highlighted{
+            color: red;
+        }
+    </style>
+
+    <!-- meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- css -->
+    <!-- <link rel="stylesheet" href="/static/blog/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="/static/blog/css/pace.css">
+    <link rel="stylesheet" href="/static/blog/css/custom.css">
+    <!-- 代码高亮 -->
+    <!--7 <link rel="stylesheet" href="/static/blog/css/highlights/autumn.css"> -->
+    <!--6 <link rel="stylesheet" href="/static/blog/css/highlights/borland.css"> -->
+    <!--5 <link rel="stylesheet" href="/static/blog/css/highlights/colorful.css"> -->
+    <!--2 <link rel="stylesheet" href="/static/blog/css/highlights/bw.css"> -->
+    <!--6 <link rel="stylesheet" href="/static/blog/css/highlights/default.css"> -->
+    <!--7 <link rel="stylesheet" href="/static/blog/css/highlights/emacs.css"> -->
+    <!--5+ <link rel="stylesheet" href="/static/blog/css/highlights/friendly.css"> -->
+    <!--5 <link rel="stylesheet" href="/static/blog/css/highlights/github.css"> -->
+    <!--6 <link rel="stylesheet" href="/static/blog/css/highlights/manni.css"> -->
+    <!--0 <link rel="stylesheet" href="/static/blog/css/highlights/monokai.css"> -->
+    <!--4+ <link rel="stylesheet" href="/static/blog/css/highlights/murphy.css"> -->
+    <!--1 <link rel="stylesheet" href="/static/blog/css/highlights/native.css"> -->
+    <!--1 <link rel="stylesheet" href="/static/blog/css/highlights/fruity.css"> -->
+    <!--6 <link rel="stylesheet" href="/static/blog/css/highlights/perldoc.css"> -->
+    <!--7- <link rel="stylesheet" href="/static/blog/css/highlights/tango.css"> -->
+    <!--6 <link rel="stylesheet" href="/static/blog/css/highlights/trac.css"> -->
+    <!--2+ <link rel="stylesheet" href="/static/blog/css/highlights/vim.css"> -->
+    <!--5+ <link rel="stylesheet" href="/static/blog/css/highlights/vs.css"> -->
+    <!--7 <link rel="stylesheet" href="/static/blog/css/highlights/pastie.css"> -->
+    <link rel="stylesheet" href="/static/blog/css/highlights/zenburn.css">
+
+    <!-- js -->
+    <!-- <script src="/static/blog/js/jquery-2.1.3.min.js"></script> -->
+    <!-- <script src="/static/blog/js/bootstrap.min.js"></script> -->
+    <script src="https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/static/blog/js/pace.min.js"></script>
+    <script src="/static/blog/js/modernizr.custom.js"></script>
+</head>
+
+<body>
+<div class="container">
+    <header id="site-header">
+        <div class="row">
+            <div class="col-md-4 col-sm-5 col-xs-8">
+                <div class="logo">
+                    <h1><a href="/">时光笔记</a></h1>
+                </div>
+            </div>
+            <div class="col-md-8 col-sm-7 col-xs-4">
+                <nav class="main-nav" role="navigation">
+                    <div class="navbar-header">
+                        <button type="button" id="trigger-overlay" class="navbar-toggle">
+                            <span class="ion-navicon"></span>
+                        </button>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="cl-effect-11"><a href="/" data-hover="首页">首页</a></li>
+                            <li class="cl-effect-11"><a href="#" data-hover="博客">博客</a></li>
+                            <li class="cl-effect-11"><a href="#" data-hover="关于">关于</a></li>
+                            <li class="cl-effect-11"><a href="#" data-hover="联系">联系</a></li>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </nav>
+                <div id="header-search-box">
+                    <a id="search-menu" href="#"><span id="search-icon" class="ion-ios-search-strong"></span></a>
+                    <div id="search-form" class="search-form">
+                        <form role="search" method="get" id="searchform" action="/search/">
+                            <input type="search" name="q" placeholder="搜索" required>
+                            <button type="submit"><span class="ion-ios-search-strong"></span></button>
+                        </form>
+                    </div>
+                </div>
+            </div><!-- col-md-8 -->
+        </div>
+    </header>
+</div>
+
+<div class="content-body">
+    <div class="container">
+        <div class="row">
+            <main class="col-md-8">
+                
+    <article class="post post-1">
+        <header class="entry-header">
+            <h1 class="entry-title">软件包和系统更新</h1>
+            <div class="entry-meta">
+                <span class="post-category"><a href="#">Linux</a></span>
+                <span class="post-date"><a href="#"><time class="entry-date"
+                                                          datetime="2017年11月9日 20:30">2017年11月9日 20:30</time></a></span>
+                <span class="post-author"><a href="#">YJ</a></span>
+                <span class="comments-link"><a href="/post/1/#comment">0 评论</a></span>
+                <span class="views-count"><a href="#">11 阅读</a></span>
+            </div>
+        </header>
+        <div class="entry-content clearfix">
+            <h2 id="更新">更新</h2>
+<div class="codehilite"><pre><span></span>    apt update          <span class="c1"># 刷新软件源</span>
+    apt-file update     <span class="c1"># 更新软件包的文件库，第一次使用或apt update后都需运行一次</span>
+    apt upgrade         <span class="c1"># 只升级软件包，慎用!!!</span>
+    apt dist-upgrade    <span class="c1"># 升级软件包和系统</span>
+</pre></div>
+
+
+<h3 id="apt-upgrade-和-apt-dist-upgrade-的异同">apt upgrade 和 apt dist-upgrade 的异同</h3>
+<h4 id="相同点">相同点</h4>
+<blockquote>
+<p>无论是使用哪一种方式更新,都需要先update刷新软件源</p>
+</blockquote>
+<h4 id="不同点">不同点</h4>
+<blockquote>
+<ul>
+<li>upgrade只是简单的更新包，不管这些依赖，它不能添加新的软件包，或是删除软件包。并且不更改相应软件的的配置文件(包括内核)</li>
+<li>dist-upgrade可以根据依赖关系的变化，添加软件包，删除软件包,并且更改相应软件的配置文件(包括内核)</li>
+</ul>
+</blockquote>
+<h3 id="适用范围">适用范围</h3>
+<blockquote>
+<ul>
+<li>upgrade适合发行版本正常的软件更新和安装补丁更新</li>
+<li>dist-upgrade适合发行版从测试版等非正式版更新至正式版,或者跨越大版本进行更新(例如深度操作系统11.12更新至深度操作系统12.06)</li>
+</ul>
+</blockquote>
+<hr />
+<h2 id="软件包的安装和卸载">软件包的安装和卸载</h2>
+<blockquote>
+<p>aptitude 在删除一个包时会同时删除本身所依赖的包。这样系统中不会残留无用的包</p>
+</blockquote>
+<div class="codehilite"><pre><span></span>    apt remove ……
+    apt autoremove              <span class="c1"># 删除安装其他包时自动安装的目前不被系统需要，本身也不被其他包所依赖的包</span>
+
+    aptitude                    <span class="c1"># 如果未指定，aptitude 将进入交互模式</span>
+    aptitude install &lt;pkgname&gt;  <span class="c1"># 安装/升级软件包</span>
+    aptitude remove &lt;pkgname&gt;   <span class="c1"># 卸载软件包</span>
+    aptitude purge &lt;pkgname&gt;    <span class="c1"># 卸载软件包并删除其配置文件</span>
+    aptitude forbid-version     <span class="c1"># 禁止 aptitude 升级到某一特定版本的软件包</span>
+    aptitude update             <span class="c1"># 下载新/可升级软件包列表</span>
+    aptitude safe-upgrade       <span class="c1"># 执行一次安全的升级</span>
+    aptitude full-upgrade       <span class="c1"># 执行升级，可能会安装和卸载软件包</span>
+    aptitude search             <span class="c1"># 按名称 和/或 表达式搜索软件包</span>
+    aptitude show               <span class="c1"># 显示一个软件包的详细信息</span>
+    aptitude clean              <span class="c1"># 删除已下载的软件包文件</span>
+    aptitude autoclean          <span class="c1"># 删除旧的已下载软件包文件</span>
+    aptitude download           <span class="c1"># 下载软件包的 .deb 文件</span>
+
+    dpkg -i &lt;debname&gt;       <span class="c1"># 安装软件包</span>
+    dpkg -C                 <span class="c1"># 搜索损坏的软件包，大写C</span>
+    dpkg -r &lt;debname&gt;       <span class="c1"># 卸载已安装的软件包，但保留配置文件</span>
+    dpkg -P &lt;debname&gt;       <span class="c1"># 卸载已安装软件包,完全清除包（含配置文件）</span>
+    dpkg -S file            <span class="c1"># 这个文件属于哪个已安装软件包</span>
+    dpkg-deb -c &lt;debname&gt;   <span class="c1"># 查看查看deb包含有那些文件，安装前根据deb文件查看</span>
+    dpkg -L &lt;debname&gt;       <span class="c1"># 查看查看deb包含有那些文件，安装后根据包名查看</span>
+    dpkg –force-all –purge &lt;debname&gt; <span class="c1"># 强制卸载难卸载，并且阻止别的软件的应用的软件包，慎用!!!</span>
+</pre></div>
+
+
+<hr />
+<h2 id="系统清理删除apt缓存">系统清理——删除APT缓存</h2>
+<blockquote>
+<p>/var/cache/apt/archives/ 和 /var/cache/apt/archives/partial/目录</p>
+</blockquote>
+<div class="codehilite"><pre><span></span>    apt clean       <span class="c1">##删除所有包(锁定的除外)</span>
+    apt autoclean   <span class="c1">##仅删除旧版本的软件包和已卸载的软件包</span>
+    aptitude autoclean       <span class="c1">##删除旧的已下载软件包文件</span>
+</pre></div>
+
+
+<hr />
+<h2 id="查看各文件系统所占空间">查看各文件系统所占空间</h2>
+<div class="codehilite"><pre><span></span>    du -h
+</pre></div>
+
+
+<hr />    <!-- safe标签（过滤器Filter）：告诉Django该段文本安全 -->
+            <br>
+            <div class="widget-tag-cloud">
+                <ul>
+                    标签：
+                    
+                        <li><a href="/tag/6/">Linux</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </article>
+    <section class="comment-area">
+        <hr>
+        <h3>发表评论</h3>
+        <form action="/comment/post/1/" method="post" class="comment-form">
+            <input type='hidden' name='csrfmiddlewaretoken' value='XNrdx6ELAS6QBs89AQHydpYC298rfG6VkaKrNLBUWpmgzutaKziE52Xi4wzAUQmc' />
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="id_name">名字:</label>
+                    <input id="id_name" maxlength="100" name="name" type="text" required />
+                    
+                </div>
+                <div class="col-md-4">
+                    <label for="id_email">邮箱:</label>
+                    <input id="id_email" maxlength="255" name="email" type="email" required />
+                    
+                </div>
+                <div class="col-md-4">
+                    <label for="id_url">网址:</label>
+                    <input id="id_url" maxlength="200" name="url" type="url" />
+                    
+                </div>
+                <div class="col-md-12" id="col-md-axb">
+                    <label for="id_text">评论:</label>
+                    <textarea cols="40" id="id_text" name="text" rows="10" required>
+</textarea>
+                    
+                    <button type="submit" class="comment-btn">发表</button>
+                </div>
+            </div>    <!-- row -->
+        </form>
+
+        <div class="comment-list-panel">
+            <h3>评论列表，共 <span>0</span> 条评论</h3>
+            <ul class="comment-list list-unstyled">
+                
+                暂无评论
+                
+            </ul>
+        </div>
+    </section>
+
+
+            </main>
+            <aside class="col-md-4">
+                    
+    <div class="widget widget-content">
+        <h3 class="widget-title">目录</h3>
+        <div class="toc">
+<ul>
+<li><a href="#更新">更新</a><ul>
+<li><a href="#apt-upgrade-和-apt-dist-upgrade-的异同">apt upgrade 和 apt dist-upgrade 的异同</a><ul>
+<li><a href="#相同点">相同点</a></li>
+<li><a href="#不同点">不同点</a></li>
+</ul>
+</li>
+<li><a href="#适用范围">适用范围</a></li>
+</ul>
+</li>
+<li><a href="#软件包的安装和卸载">软件包的安装和卸载</a></li>
+<li><a href="#系统清理删除apt缓存">系统清理——删除APT缓存</a></li>
+<li><a href="#查看各文件系统所占空间">查看各文件系统所占空间</a></li>
+</ul>
+</div>
+
+    </div>
+
+                <div class="widget widget-recent-posts">
+                    <h3 class="widget-title">最新</h3>
+                                        
+                    <ul>
+                        
+                        <li>
+                            <a href="/post/9/">Flask request参数的获取</a>                                
+                        </li>
+                        
+                        <li>
+                            <a href="/post/7/">Django使用MySQL数据库的问题</a>                                
+                        </li>
+                        
+                        <li>
+                            <a href="/post/6/">Python一行命令</a>                                
+                        </li>
+                        
+                        <li>
+                            <a href="/post/5/">【转载】王垠——如何掌握所有的程序语言</a>                                
+                        </li>
+                        
+                        <li>
+                            <a href="/post/4/">git的使用</a>                                
+                        </li>
+                        
+                        <li>
+                            <a href="/post/2/">守护进程</a>                                
+                        </li>
+                        
+                    </ul>
+                </div>
+                <div class="widget widget-archives">
+                    <h3 class="widget-title">归档</h3>
+                    
+                    <ul>
+                                                    
+                        <li>
+                            <a href="/archives/2017/12/">
+                                2017 年 12 月
+                            </a>
+                        </li>
+                                                    
+                        <li>
+                            <a href="/archives/2017/11/">
+                                2017 年 11 月
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+
+                <div class="widget widget-category">
+                    <h3 class="widget-title">分类</h3>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="/category/2/">Linux
+                                <span class="post-count"> --[1]</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="/category/3/">watchdog
+                                <span class="post-count"> --[1]</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="/category/4/">Git
+                                <span class="post-count"> --[1]</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="/category/5/">Server
+                                <span class="post-count"> --[1]</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="/category/7/">Python
+                                <span class="post-count"> --[1]</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="/category/10/">数据库
+                                <span class="post-count"> --[1]</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="/category/13/">转载
+                                <span class="post-count"> --[1]</span>
+                            </a>
+                        </li>
+                        
+                        <li>
+                            <a href="/category/14/">Flask
+                                <span class="post-count"> --[1]</span>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+
+                <div class="widget widget-tag-cloud">
+                    <h3 class="widget-title">标签云</h3>
+                    
+                    <ul>
+                        
+                        <li>
+                            <a href="/tag/1/">Python之美</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tag/3/">Python</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tag/4/">语言</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tag/6/">Linux</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tag/7/">git</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tag/12/">nginx</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tag/13/">踩过的坑</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tag/14/">数据库</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tag/16/">守护进程</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tag/17/">Django</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/tag/18/">request参数</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+
+                <div class="rss">
+                    <a href="/all/rss/"><span class="ion-social-rss-outline"></span> RSS 订阅</a>
+                </div>
+            </aside>
+        </div>
+    </div>
+</div>
+
+<footer id="site-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+				<p class="copyright">鲁ICP备17049445号<br>
+				   &copy 2017 - CSS采集自<a href="http://www.cssmoban.com/"
+                                                        target="_blank" title="模板之家">模板之家</a>
+                    - 由<a href="http://yj1516.site/" title="网页模板" target="_blank">时光笔记</a>修改
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Mobile Menu -->
+<div class="overlay overlay-hugeinc">
+    <button type="button" class="overlay-close"><span class="ion-ios-close-empty"></span></button>
+    <nav>
+        <ul>
+            <li><a href="/">首页</a></li>
+            <li><a href="full-width.html">博客</a></li>
+            <li><a href="about.html">关于</a></li>
+            <li><a href="contact.html">联系</a></li>
+        </ul>
+    </nav>
+</div>
+
+<script src="/static/blog/js/script.js"></script>
+
+</body>
+</html>

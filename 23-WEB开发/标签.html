@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML标签</title>
+</head>
+<body>
+    <!-- 一、注释：ctrl + / -->
+    
+
+    <!-- 二、标题 -->
+    <h1><img src="logo.ico" title="OverWatch" alt="OW"></h1>   <!-- 一个html文件，一级标题只用一次，放logo -->
+    
+
+    <p>段落标签</p><br>
+
+
+    <!-- 设置字体的标签 -->
+    <b>加粗</b><br>
+    <i>倾斜</i><br>
+    <u>下划线</u><br>
+    <s>删除线</s><br><br>
+    
+
+    换行<br><br>  <!-- 单标记，无需成对出现；相对于双标记，需要成对出现 -->
+
+
+    <!-- 强调语义的标签 -->
+    <strong>加粗 —— 搜索引擎优先抓取</strong><br>
+    <em>倾斜</em><br>
+    <ins>下划线</ins><br>
+    <del>删除线</del><br><br>
+
+
+    <!-- 布局使用的标签 -->
+    <div>div<br>
+        <span>span<br>
+            <!-- 插入图片标签并添加超链接 -->
+            <!-- 属性：
+                src——图片名
+                title——指向图片的注释
+                alt——替换文本（图片不加载时的显示文字）
+            -->
+            <a href="http://ow.blizzard.cn/home">
+                <img src="3.jpg" title="愚蠢的欧豆豆" alt="hanzo.jpg">
+            </a>
+        </span>
+    </div><br><br>
+
+
+    <!-- 超链接 -->
+    <a href="https://bbs.deepin.org/">深度论坛</a><br><br>
+
+
+    <!-- 未知地址时以 # 代替
+        一个 # —— 返回顶部
+        两个 ## 和三个 ### 不做任何操作，但ie低版本不支持 ##
+    -->
+
+
+    <!-- 三种列表 -->
+    <!-- 无序列表 —— ul嵌套li -->
+    <ul>
+        <li>无序列表1</li>
+        <li>无序列表2</li>
+    </ul>
+    <!-- 有序列表 —— ol嵌套li -->
+    <ol>
+        <li>有序列表1</li>
+        <li>有序列表2</li>
+    </ol><br>
+    <!-- 项目（自定义）列表 —— dl嵌套dt和dd ，dt是标题 dd是描述 -->
+    <dl>
+        <dt>标题1</dt>
+        <dd>描述1-1</dd>
+        <dd>描述1-2</dd>
+        <br>
+        <dt>标题2</dt>
+        <dd>描述2-1</dd>
+        <dd>描述2-2</dd>        
+    </dl><br>
+
+
+    <!-- 表单 —— 登录、注册、搜索框...使用 -->
+    <!-- 表单（域）标签；action="用户信息提交地址"，method="get/post" -->
+    <form action="" method="">
+        <!-- input标签 —— 表单控件 -->
+        文本框：<input type="text"><br><br>    <!--  -->
+        密码框：<input type="password" name="" id=""><br><br>   <!--  -->
+        单选框：<input type="radio" name="gender" id="man"><label for="man">男</label>
+        <input type="radio" name="gender" checked id="women"><label for="women">女</label><br><br>
+        <!-- 
+            name设置单选
+            checked设置默认选中，d=v，省略v
+            label标签环绕要扩大的点击范围，for属性设置关键字，id设置为和for值一样
+        -->
+        上传文件：<input type="file" name="" id=""><br><br>
+        多选框：<input type="checkbox" name="" id="S.T"><label for="S.T">科技</label>
+        <input type="checkbox" name="" id="cate"><label for="cate">美食</label>
+        <input type="checkbox" name="" id="music"><label for="music">音乐</label><br><br>
+        下拉菜单：<select name="" id="">     <!-- selected添加默认显示选项 -->
+            <option value="">君</option>
+            <option value="">臣</option>
+            <option value="">佐</option>
+            <option value="">使</option>
+        </select><br><br>
+        文本域：<textarea name="" id="" cols="25" rows="4"></textarea><br><br>
+        <input type="submit" value="注册">
+        <input type="button" value="普通按钮">
+        <input type="reset" value="重置"><br><br>
+    </form><br><br>
+
+
+    <!-- 表格（已过时） table嵌套tr，tr嵌套td -->
+    <table border="1">   <!-- 单元表；border表示表格线 -->
+        <tr>    <!-- 单元行 -->
+            <td>单元格1</td>
+            <td>单元格2</td>
+            <td>单元格3</td>
+        </tr>
+    </table>
+
+</body>
+</html>
